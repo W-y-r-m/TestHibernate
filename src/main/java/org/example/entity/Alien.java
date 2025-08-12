@@ -1,6 +1,10 @@
 package org.example.entity;
 
-import javax.persistence.*;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import java.util.List;
 
 //@Entity(name = "alien_table")
 @Entity
@@ -12,8 +16,8 @@ public class Alien {
     private String aname;
 //    @Transient
     private String tech;
-    @OneToOne
-    private Laptop laptop;
+    @OneToMany(mappedBy = "alien")
+    private List<Laptop> laptops;
 
 
     public int getAid() {
@@ -40,12 +44,12 @@ public class Alien {
         this.tech = tech;
     }
 
-    public Laptop getLaptop() {
-        return laptop;
+    public List<Laptop> getLaptops() {
+        return laptops;
     }
 
-    public void setLaptop(Laptop laptop) {
-        this.laptop = laptop;
+    public void setLaptops(List<Laptop> laptops) {
+        this.laptops = laptops;
     }
 
     @Override
@@ -54,7 +58,7 @@ public class Alien {
                 "aid=" + aid +
                 ", aname='" + aname + '\'' +
                 ", tech='" + tech + '\'' +
-                ", laptop=" + laptop +
+                ", laptop=" + laptops +
                 '}';
     }
 }
