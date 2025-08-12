@@ -12,6 +12,8 @@ public class Alien {
     private String aname;
 //    @Transient
     private String tech;
+    private Laptop laptop;
+
 
     public int getAid() {
         return aid;
@@ -37,12 +39,21 @@ public class Alien {
         this.tech = tech;
     }
 
+    public Laptop getLaptop() {
+        return laptop;
+    }
+
+    public void setLaptop(Laptop laptop) {
+        this.laptop = laptop;
+    }
+
     @Override
     public String toString() {
         return "Alien{" +
                 "aid=" + aid +
                 ", aname='" + aname + '\'' +
                 ", tech='" + tech + '\'' +
+                ", laptop=" + laptop +
                 '}';
     }
 }
