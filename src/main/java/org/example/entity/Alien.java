@@ -4,14 +4,13 @@ import javax.persistence.*;
 
 //@Entity(name = "alien_table")
 @Entity
-@Table(name = "alien_table")
+//@Table(name = "alien_table")
 public class Alien {
     @Id
     private int aid;
-    @Column(name = "alien_name")
+//    @Column(name = "alien_name")
     private String aname;
-
-    @Transient
+//    @Transient
     private String tech;
 
     public int getAid() {
