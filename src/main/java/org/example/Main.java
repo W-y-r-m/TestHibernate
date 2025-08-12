@@ -23,21 +23,34 @@ public class Main {
             session.beginTransaction();
 
             // Tạo một đối tượng Student
-            Student student = new Student(7, "ThinhPD", "thinhpd@gmail.com");
+            Student student = new Student(8, "NgaDC", "ngadc@gmail.com");
+
+            Student s2 = null;
+
 
             // Lưu vào cơ sở dữ liệu
-            session.save(student);
+//            session.save(student);
+//            session.persist(student);
+
+            // Update vào Database
+//            session.merge(student);
+
+            // Delete in database
+            session.delete(student);
 
             // Commit giao dịch
             session.getTransaction().commit();
 
-            System.out.println("Lưu student thành công!");
+//            System.out.println("Lưu student thành công!");
 
             // Truy xuất student từ cơ sở dữ liệu
-            session.beginTransaction();
-            Student retrievedStudent = session.get(Student.class, 1L);
-            System.out.println("Student: " + retrievedStudent.getName() + ", " + retrievedStudent.getEmail());
-            session.getTransaction().commit();
+//            session.beginTransaction();
+//            Student retrievedStudent = session.get(Student.class, 1);
+//            System.out.println("Student: " + retrievedStudent.getName() + ", " + retrievedStudent.getEmail());
+//            session.getTransaction().commit();
+
+
+//            System.out.println(retrievedStudent);
 
         } catch (Exception e) {
             e.printStackTrace();
