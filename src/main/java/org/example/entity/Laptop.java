@@ -1,12 +1,25 @@
 package org.example.entity;
 
 import javax.persistence.Embeddable;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
-@Embeddable
+//@Embeddable
+@Entity
 public class Laptop {
+    @Id
+    private int lid;
     private String brand;
     private String model;
     private int ram;
+
+    public int getLid() {
+        return lid;
+    }
+
+    public void setLid(int lid) {
+        this.lid = lid;
+    }
 
     public String getBrand() {
         return brand;
@@ -35,7 +48,8 @@ public class Laptop {
     @Override
     public String toString() {
         return "Laptop{" +
-                "brand='" + brand + '\'' +
+                "lid=" + lid +
+                ", brand='" + brand + '\'' +
                 ", model='" + model + '\'' +
                 ", ram=" + ram +
                 '}';

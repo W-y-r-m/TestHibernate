@@ -12,6 +12,7 @@ public class Alien {
     private String aname;
 //    @Transient
     private String tech;
+    @OneToOne
     private Laptop laptop;
 
 
