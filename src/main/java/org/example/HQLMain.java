@@ -25,20 +25,20 @@ public class HQLMain {
 
         // select * from laptop where ram = 32 -> SQL
         // from Laptop where ram = 32 -> HQL
+//        String brand = "Asus";
+//        Query query = session.createQuery("select brand,model from Laptop where brand like ?1");
+//        query.setParameter(1, brand);
+//        List<Object[]> laptops = query.getResultList();
+//        for (Object[] data : laptops) {
+//            System.out.println((String) data[0] +" "+ (String)data[1]);
+//        }
+//        System.out.println(laptops);
 
-        String brand = "Asus";
+//        Laptop laptop = session.get(Laptop.class, 1);
+//        Laptop laptop = session.load(Laptop.class, 2);
+        Laptop laptop = session.byId(Laptop.class).getReference(2);
+        System.out.println(laptop);
 
-        Query query = session.createQuery("select brand,model from Laptop where brand like ?1");
-        query.setParameter(1, brand);
-        List<Object[]> laptops = query.getResultList();
-
-//        Laptop l1 = session.get(Laptop.class, 3);
-
-        for (Object[] data : laptops) {
-            System.out.println((String) data[0] +" "+ (String)data[1]);
-        }
-
-        System.out.println(laptops);
 
         session.close();
 
