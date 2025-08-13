@@ -1,10 +1,7 @@
 package org.example.entity;
 
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.List;
 
 //@Entity(name = "alien_table")
@@ -18,7 +15,7 @@ public class Alien {
 //    @Transient
     private String tech;
 //    @OneToMany(mappedBy = "alien")
-    @ManyToMany
+    @OneToMany(fetch = FetchType.EAGER)
     private List<Laptop> laptops;
 
 

@@ -13,16 +13,10 @@ public class Laptop {
     private int ram;
 //    @ManyToOne
 //    private Alien alien;
-    @ManyToMany(mappedBy = "laptops")
-    private List<Alien> aliens;
+//    @ManyToMany(mappedBy = "laptops")
+//    private List<Alien> aliens;
 
-    public List<Alien> getAliens() {
-        return aliens;
-    }
 
-    public void setAliens(List<Alien> aliens) {
-        this.aliens = aliens;
-    }
 
     public int getLid() {
         return lid;
